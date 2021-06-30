@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
-mongoose.connect("mongodb://localhost/dwi", {
+let uri = 'mongodb+srv://Jonhy:Proyecto123@clusteproyecto.72nag.mongodb.net/dwi'
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,
