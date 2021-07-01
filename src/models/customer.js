@@ -12,7 +12,7 @@ const customerSchema = new Schema({
         required: true
     },
     "billing_address": String,
-    "shipping_addresss": String,
+    "shipping_address": String,
     "country": String,
     "phone": Number,
     "customer_type": String,

@@ -8,10 +8,10 @@ export const getCustomer = async (req, res) => {
     res.json(customer);
 }
 
-// export const getCustomerById = async(req, res) => {
-//      const product = await Product.findById(req.params.id);
-//      res.status(200).json(product);
-// }
+export const getCustomerById = async(req, res) => {
+      const customer = await Customer.findById(req.params.id);
+      res.status(200).json(customer);
+}
 
 export const createCustomer = async (req, res) => {
     try {
@@ -20,7 +20,7 @@ export const createCustomer = async (req, res) => {
             email,
             password,
             billing_address,
-            shipping_addresss,
+            shipping_address,
             country,
             phone,
             customer_type,
@@ -43,7 +43,7 @@ export const createCustomer = async (req, res) => {
             email,
             password: await Customer.encryptPassword(password),
             billing_address,
-            shipping_addresss,
+            shipping_address,
             country,
             phone,
             customer_type,
@@ -63,7 +63,7 @@ export const createCustomer = async (req, res) => {
         });
         
     } catch (error) {
-        return res.status(404).json(error);
+        return res.status(404).json({message: "El correo ya fue registrado"});
     }
     
 }
